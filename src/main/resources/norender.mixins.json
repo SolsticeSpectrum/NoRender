@@ -1,0 +1,13 @@
+{
+  "required": true,
+  "package": "org.norender.mixin",
+  "compatibilityLevel": "JAVA_16",
+  "client": [
+    "MixinInGameHud",
+    "MixinEntityRenderer"
+  ],
+  "mixinPriority" : 899,
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

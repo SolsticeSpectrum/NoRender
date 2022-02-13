@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "id": "norender",
+  "version": "${version}",
+
+  "name": "NoRender",
+  "description": "bruh",
+  "authors": [
+    "DarkReaper231",
+    "Etheradon#2766"
+  ],
+
+  "icon": "assets/norender/icon.png",
+
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "org.norender.NoRender"
+    ]
+  },
+  "mixins": [
+    "norender.mixins.json"
+  ],
+  "depends": {
+    "minecraft": "~1.18"
+  }
+}
