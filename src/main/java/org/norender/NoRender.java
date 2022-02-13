@@ -20,7 +20,7 @@ public class NoRender implements ModInitializer {
 
 	@Override
 	public void onInitialize() {
-		if (INSTANCE != null) {
+		if (INSTANCE == null) {
 			INSTANCE = this;
 		}
 
