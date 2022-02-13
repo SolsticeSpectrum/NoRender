@@ -5,7 +5,7 @@ name: NoRender Workflow Build
 
 on:
   push:
-    branches: [ 1.18.1 ]
+    branches: [ main ]
 
 jobs:
   build-linux:
