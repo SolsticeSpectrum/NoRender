@@ -14,7 +14,56 @@ public class MixinInGameHud {
 
 	@Inject(method = "renderScoreboardSidebar", at = @At("HEAD"), cancellable = true)
 	public void renderScoreboardSidebar(MatrixStack matrices, ScoreboardObjective objective, CallbackInfo callback) {
-		if (NoRender.getInstance().isEnabled()) {
+		if (NoRender.getInstance().isEnabled1()) {
+			callback.cancel();
+		}
+	}
+
+	@Inject(method = "renderCrosshair", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/option/Perspective;isFirstPerson()Z"), cancellable = true)
+	public void renderCrosshair(MatrixStack matrices, CallbackInfo callback) {
+		if (NoRender.getInstance().isEnabled3()) {
+			callback.cancel();
+		}
+	}
+
+	@Inject(method = "renderHotbar", at = @At("HEAD"), cancellable = true)
+	public void renderHotbar(float tickDelta, MatrixStack matrices, CallbackInfo callback) {
+		if (NoRender.getInstance().isEnabled4()) {
+			callback.cancel();
+		}
+	}
+
+	@Inject(method = "renderStatusEffectOverlay", at = @At("HEAD"), cancellable = true)
+	public void renderStatusEffectOverlay(MatrixStack matrices, CallbackInfo callback) {
+		if (NoRender.getInstance().isEnabled4()) {
+			callback.cancel();
+		}
+	}
+
+	@Inject(method = "renderMountJumpBar", at = @At("HEAD"), cancellable = true)
+	public void renderMountJumpBar(MatrixStack matrices, int x, CallbackInfo callback) {
+		if (NoRender.getInstance().isEnabled4()) {
+			callback.cancel();
+		}
+	}
+
+	@Inject(method = "renderExperienceBar", at = @At("HEAD"), cancellable = true)
+	public void renderExperienceBar(MatrixStack matrices, int x, CallbackInfo callback) {
+		if (NoRender.getInstance().isEnabled4()) {
+			callback.cancel();
+		}
+	}
+
+	@Inject(method = "renderStatusBars", at = @At("HEAD"), cancellable = true)
+	public void renderStatusBars(MatrixStack matrices, CallbackInfo callback) {
+		if (NoRender.getInstance().isEnabled4()) {
+			callback.cancel();
+		}
+	}
+
+	@Inject(method = "renderMountHealth", at = @At("HEAD"), cancellable = true)
+	public void renderMountHealth(MatrixStack matrices, CallbackInfo callback) {
+		if (NoRender.getInstance().isEnabled4()) {
 			callback.cancel();
 		}
 	}

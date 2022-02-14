@@ -3,8 +3,12 @@
   "package": "org.norender.mixin",
   "compatibilityLevel": "JAVA_16",
   "client": [
+    "MixinBossBarHud",
+    "MixinChatHud",
+    "MixinEntityRenderer",
+    "MixinGameRenderer",
     "MixinInGameHud",
-    "MixinEntityRenderer"
+    "MixinWorldRenderer"
   ],
   "mixinPriority" : 899,
   "injectors": {
