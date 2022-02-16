@@ -7,7 +7,8 @@
   "description": "bruh",
   "authors": [
     "DarkReaper231",
-    "Etheradon#2766"
+    "Etheradon#2766",
+    "fayer3#2332"
   ],
 
   "icon": "assets/norender/icon.png",
@@ -19,7 +20,8 @@
     ]
   },
   "mixins": [
-    "norender.mixins.json"
+    "norender.mixins.json",
+    "optifine.mixins.json"
   ],
   "depends": {
     "minecraft": "~1.18"
