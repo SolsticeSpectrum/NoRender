@@ -19,6 +19,10 @@ repositories {
 	maven {
 		url "https://jitpack.io"
 	}
+
+	maven {
+		url "https://cursemaven.com"
+	}
 }
 
 dependencies {
@@ -27,6 +31,7 @@ dependencies {
 	mappings "net.fabricmc:yarn:${project.yarn_mappings}:v2"
 	modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
 	modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
+	modCompileOnly "curse.maven:xaeros-minimap-263420:3647008"
 }
 
 processResources {

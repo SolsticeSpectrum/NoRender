@@ -23,7 +23,7 @@ public class NoRender implements ModInitializer {
     private static KeyBinding keyBinding5;
     private static KeyBinding keyBinding6;
     private static KeyBinding keyBinding8;
-    private static KeyBinding keyBinding0;
+    //private static KeyBinding keyBinding0;
     private static NoRender INSTANCE;
 
     @Override
@@ -38,8 +38,9 @@ public class NoRender implements ModInitializer {
         keyBinding4 = KeyBindingHelper.registerKeyBinding(new KeyBinding("HUD", InputUtil.Type.KEYSYM, GLFW.GLFW_KEY_KP_4, "NoRender (press left ALT + Num)"));
         keyBinding5 = KeyBindingHelper.registerKeyBinding(new KeyBinding("Chat", InputUtil.Type.KEYSYM, GLFW.GLFW_KEY_KP_5, "NoRender (press left ALT + Num)"));
         keyBinding6 = KeyBindingHelper.registerKeyBinding(new KeyBinding("Hand", InputUtil.Type.KEYSYM, GLFW.GLFW_KEY_KP_6, "NoRender (press left ALT + Num)"));
-        keyBinding8 = KeyBindingHelper.registerKeyBinding(new KeyBinding("World", InputUtil.Type.KEYSYM, GLFW.GLFW_KEY_KP_8, "NoRender (press left ALT + Num)"));
-        keyBinding0 = KeyBindingHelper.registerKeyBinding(new KeyBinding("Crash", InputUtil.Type.KEYSYM, GLFW.GLFW_KEY_KP_0, "NoRender (press left ALT + Num)"));
+        //keyBinding8 = KeyBindingHelper.registerKeyBinding(new KeyBinding("World", InputUtil.Type.KEYSYM, GLFW.GLFW_KEY_KP_8, "NoRender (press left ALT + Num)"));
+        keyBinding8 = KeyBindingHelper.registerKeyBinding(new KeyBinding("Minimap", InputUtil.Type.KEYSYM, GLFW.GLFW_KEY_KP_8, "NoRender (press left ALT + Num)"));
+        //keyBinding0 = KeyBindingHelper.registerKeyBinding(new KeyBinding("Crash", InputUtil.Type.KEYSYM, GLFW.GLFW_KEY_KP_0, "NoRender (press left ALT + Num)"));
 
         ClientTickEvents.END_CLIENT_TICK.register(client -> {
             if (InputUtil.isKeyPressed(MinecraftClient.getInstance().getWindow().getHandle(), GLFW.GLFW_KEY_LEFT_ALT)) {
@@ -72,9 +73,9 @@ public class NoRender implements ModInitializer {
                     isEnabled8 = !isEnabled8;
                 }
 
-                while (keyBinding0.wasPressed()) {
+                /*while (keyBinding0.wasPressed()) {
                     throw new RuntimeException("BOOM!");
-                }
+                }*/
             }
         });
     }

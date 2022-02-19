@@ -21,7 +21,8 @@
   },
   "mixins": [
     "norender.mixins.json",
-    "optifine.mixins.json"
+    "optifine.mixins.json",
+    "xaero.mixins.json"
   ],
   "depends": {
     "minecraft": "~1.18"
