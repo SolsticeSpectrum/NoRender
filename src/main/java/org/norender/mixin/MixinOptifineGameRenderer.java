@@ -13,9 +13,9 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 public class MixinOptifineGameRenderer {
     // Optifine sure gave me a headache. Thanks to fayer3#2332 for figuring this shit out.
     @Inject(at = @At("HEAD"), method = "Lnet/minecraft/client/render/GameRenderer;renderHand(Lnet/minecraft/client/util/math/MatrixStack;Lnet/minecraft/client/render/Camera;FZZZ)V", cancellable = true)
-    public void renderHand(MatrixStack matrixStackIn, Camera activeRenderInfoIn, float partialTicks, boolean renderItem, boolean renderOverlay, boolean renderTranslucent, CallbackInfo callback) {
+    public void onRenderHand(MatrixStack matrixStackIn, Camera activeRenderInfoIn, float partialTicks, boolean renderItem, boolean renderOverlay, boolean renderTranslucent, CallbackInfo info) {
         if (NoRender.getInstance().isEnabled6())
-            callback.cancel();
+            info.cancel();
     }
 }
 

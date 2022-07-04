@@ -40,7 +40,7 @@ public class NoRender implements ModInitializer {
         keyBinding4 = KeyBindingHelper.registerKeyBinding(new KeyBinding("HUD", InputUtil.Type.KEYSYM, GLFW.GLFW_KEY_KP_4, "NoRender (press left ALT + Num)"));
         keyBinding5 = KeyBindingHelper.registerKeyBinding(new KeyBinding("Chat", InputUtil.Type.KEYSYM, GLFW.GLFW_KEY_KP_5, "NoRender (press left ALT + Num)"));
         keyBinding6 = KeyBindingHelper.registerKeyBinding(new KeyBinding("Hand", InputUtil.Type.KEYSYM, GLFW.GLFW_KEY_KP_6, "NoRender (press left ALT + Num)"));
-        keyBinding7 = KeyBindingHelper.registerKeyBinding(new KeyBinding("Particles", InputUtil.Type.KEYSYM, GLFW.GLFW_KEY_KP_7, "NoRender (press left ALT + Num)"));
+        keyBinding7 = KeyBindingHelper.registerKeyBinding(new KeyBinding("Misc", InputUtil.Type.KEYSYM, GLFW.GLFW_KEY_KP_7, "NoRender (press left ALT + Num)"));
         //keyBinding8 = KeyBindingHelper.registerKeyBinding(new KeyBinding("World", InputUtil.Type.KEYSYM, GLFW.GLFW_KEY_KP_8, "NoRender (press left ALT + Num)"));
         keyBinding8 = KeyBindingHelper.registerKeyBinding(new KeyBinding("Minimap", InputUtil.Type.KEYSYM, GLFW.GLFW_KEY_KP_8, "NoRender (press left ALT + Num)"));
         //keyBinding0 = KeyBindingHelper.registerKeyBinding(new KeyBinding("Crash", InputUtil.Type.KEYSYM, GLFW.GLFW_KEY_KP_0, "NoRender (press left ALT + Num)"));

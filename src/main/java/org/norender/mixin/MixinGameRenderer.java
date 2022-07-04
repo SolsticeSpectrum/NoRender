@@ -12,9 +12,9 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 @Mixin(GameRenderer.class)
 public class MixinGameRenderer {
     @Inject(method = "renderHand", at = @At("HEAD"), cancellable = true)
-    public void renderHand(MatrixStack matrices, Camera camera, float tickDelta, CallbackInfo callback) {
+    public void onRenderHand(MatrixStack matrices, Camera camera, float tickDelta, CallbackInfo info) {
         if (NoRender.getInstance().isEnabled6()) {
-            callback.cancel();
+            info.cancel();
         }
     }
 }

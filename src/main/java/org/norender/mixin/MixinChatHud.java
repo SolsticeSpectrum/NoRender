@@ -11,9 +11,9 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 @Mixin(ChatHud.class)
 public class MixinChatHud {
     @Inject(method = "render", at = @At("HEAD"), cancellable = true)
-    public void render(MatrixStack matrices, int tickDelta, CallbackInfo callback) {
+    public void onRender(MatrixStack matrices, int tickDelta, CallbackInfo info) {
         if (NoRender.getInstance().isEnabled5()) {
-            callback.cancel();
+            info.cancel();
         }
     }
 }
