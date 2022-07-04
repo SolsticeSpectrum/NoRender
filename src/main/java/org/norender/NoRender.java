@@ -15,6 +15,7 @@ public class NoRender implements ModInitializer {
     private boolean isEnabled4;
     private boolean isEnabled5;
     private boolean isEnabled6;
+    private boolean isEnabled7;
     private boolean isEnabled8;
     private static KeyBinding keyBinding1;
     private static KeyBinding keyBinding2;
@@ -22,6 +23,7 @@ public class NoRender implements ModInitializer {
     private static KeyBinding keyBinding4;
     private static KeyBinding keyBinding5;
     private static KeyBinding keyBinding6;
+    private static KeyBinding keyBinding7;
     private static KeyBinding keyBinding8;
     //private static KeyBinding keyBinding0;
     private static NoRender INSTANCE;
@@ -33,11 +35,12 @@ public class NoRender implements ModInitializer {
         }
 
         keyBinding1 = KeyBindingHelper.registerKeyBinding(new KeyBinding("Scoreboard", InputUtil.Type.KEYSYM, GLFW.GLFW_KEY_KP_1, "NoRender (press left ALT + Num)"));
-        keyBinding2 = KeyBindingHelper.registerKeyBinding(new KeyBinding("Nametags", InputUtil.Type.KEYSYM, GLFW.GLFW_KEY_KP_2, "NoRender (press left ALT + Num)"));
+        keyBinding2 = KeyBindingHelper.registerKeyBinding(new KeyBinding("Nametags + Glow", InputUtil.Type.KEYSYM, GLFW.GLFW_KEY_KP_2, "NoRender (press left ALT + Num)"));
         keyBinding3 = KeyBindingHelper.registerKeyBinding(new KeyBinding("Crosshair", InputUtil.Type.KEYSYM, GLFW.GLFW_KEY_KP_3, "NoRender (press left ALT + Num)"));
         keyBinding4 = KeyBindingHelper.registerKeyBinding(new KeyBinding("HUD", InputUtil.Type.KEYSYM, GLFW.GLFW_KEY_KP_4, "NoRender (press left ALT + Num)"));
         keyBinding5 = KeyBindingHelper.registerKeyBinding(new KeyBinding("Chat", InputUtil.Type.KEYSYM, GLFW.GLFW_KEY_KP_5, "NoRender (press left ALT + Num)"));
         keyBinding6 = KeyBindingHelper.registerKeyBinding(new KeyBinding("Hand", InputUtil.Type.KEYSYM, GLFW.GLFW_KEY_KP_6, "NoRender (press left ALT + Num)"));
+        keyBinding7 = KeyBindingHelper.registerKeyBinding(new KeyBinding("Particles", InputUtil.Type.KEYSYM, GLFW.GLFW_KEY_KP_7, "NoRender (press left ALT + Num)"));
         //keyBinding8 = KeyBindingHelper.registerKeyBinding(new KeyBinding("World", InputUtil.Type.KEYSYM, GLFW.GLFW_KEY_KP_8, "NoRender (press left ALT + Num)"));
         keyBinding8 = KeyBindingHelper.registerKeyBinding(new KeyBinding("Minimap", InputUtil.Type.KEYSYM, GLFW.GLFW_KEY_KP_8, "NoRender (press left ALT + Num)"));
         //keyBinding0 = KeyBindingHelper.registerKeyBinding(new KeyBinding("Crash", InputUtil.Type.KEYSYM, GLFW.GLFW_KEY_KP_0, "NoRender (press left ALT + Num)"));
@@ -69,6 +72,10 @@ public class NoRender implements ModInitializer {
                     isEnabled6 = !isEnabled6;
                 }
 
+                while (keyBinding7.wasPressed()) {
+                    isEnabled7 = !isEnabled7;
+                }
+
                 while (keyBinding8.wasPressed()) {
                     isEnabled8 = !isEnabled8;
                 }
@@ -83,31 +90,27 @@ public class NoRender implements ModInitializer {
     public static NoRender getInstance() {
         return INSTANCE;
     }
-
     public boolean isEnabled1() {
         return isEnabled1;
     }
-
     public boolean isEnabled2() {
         return isEnabled2;
     }
-
     public boolean isEnabled3() {
         return isEnabled3;
     }
-
     public boolean isEnabled4() {
         return isEnabled4;
     }
-
     public boolean isEnabled5() {
         return isEnabled5;
     }
-
     public boolean isEnabled6() {
         return isEnabled6;
     }
-
+    public boolean isEnabled7() {
+        return isEnabled7;
+    }
     public boolean isEnabled8() {
         return isEnabled8;
     }

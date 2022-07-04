@@ -1,10 +1,11 @@
 {
   "required": true,
   "package": "org.norender.mixin",
-  "compatibilityLevel": "JAVA_16",
+  "compatibilityLevel": "JAVA_17",
   "client": [
     "MixinBossBarHud",
     "MixinChatHud",
+    "MixinEntity",
     "MixinEntityRenderer",
     "MixinGameRenderer",
     "MixinInGameHud"
