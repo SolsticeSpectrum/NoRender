@@ -5,6 +5,7 @@ import net.minecraft.client.gui.hud.InGameHud;
 import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.scoreboard.ScoreboardObjective;
 import net.minecraft.text.Text;
+import net.minecraft.text.TextContent;
 import org.norender.NoRender;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
@@ -72,14 +73,19 @@ public class MixinInGameHud {
 
 	@Inject(method = "setTitle", at = @At("HEAD"), cancellable = true)
 	public void onSetTitle(Text title, CallbackInfo info) {
-		if (NoRender.getInstance().isEnabled7()) {
-			info.cancel();
-		}
+		MinecraftClient.getInstance().inGameHud.getChatHud().addMessage(Text.literal("Title: ").append(title));
+		info.cancel();
+	}
+
+	@Inject(method = "setSubtitle", at = @At("HEAD"), cancellable = true)
+	public void onSetSubtitle(Text subtitle, CallbackInfo info) {
+		MinecraftClient.getInstance().inGameHud.getChatHud().addMessage(Text.literal("Subtitle: ").append(subtitle));
+		info.cancel();
 	}
 
 	@Inject(method = "setOverlayMessage", at = @At("HEAD"), cancellable = true)
 	private void onSetOverlayMessage(Text message, boolean tinted, CallbackInfo info) {
-		MinecraftClient.getInstance().inGameHud.getChatHud().addMessage(message);
+		MinecraftClient.getInstance().inGameHud.getChatHud().addMessage(Text.literal("Action bar: ").append(message));
 		info.cancel();
 	}
 }

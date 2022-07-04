@@ -17,6 +17,8 @@ public class NoRender implements ModInitializer {
     private boolean isEnabled6;
     private boolean isEnabled7;
     private boolean isEnabled8;
+    //private boolean isEnabled9;
+    //private boolean isEnabled0;
     private static KeyBinding keyBinding1;
     private static KeyBinding keyBinding2;
     private static KeyBinding keyBinding3;
@@ -25,6 +27,7 @@ public class NoRender implements ModInitializer {
     private static KeyBinding keyBinding6;
     private static KeyBinding keyBinding7;
     private static KeyBinding keyBinding8;
+    //private static KeyBinding keyBinding9;
     //private static KeyBinding keyBinding0;
     private static NoRender INSTANCE;
 
@@ -41,8 +44,8 @@ public class NoRender implements ModInitializer {
         keyBinding5 = KeyBindingHelper.registerKeyBinding(new KeyBinding("Chat", InputUtil.Type.KEYSYM, GLFW.GLFW_KEY_KP_5, "NoRender (press left ALT + Num)"));
         keyBinding6 = KeyBindingHelper.registerKeyBinding(new KeyBinding("Hand", InputUtil.Type.KEYSYM, GLFW.GLFW_KEY_KP_6, "NoRender (press left ALT + Num)"));
         keyBinding7 = KeyBindingHelper.registerKeyBinding(new KeyBinding("Misc", InputUtil.Type.KEYSYM, GLFW.GLFW_KEY_KP_7, "NoRender (press left ALT + Num)"));
-        //keyBinding8 = KeyBindingHelper.registerKeyBinding(new KeyBinding("World", InputUtil.Type.KEYSYM, GLFW.GLFW_KEY_KP_8, "NoRender (press left ALT + Num)"));
         keyBinding8 = KeyBindingHelper.registerKeyBinding(new KeyBinding("Minimap", InputUtil.Type.KEYSYM, GLFW.GLFW_KEY_KP_8, "NoRender (press left ALT + Num)"));
+        //keyBinding9 = KeyBindingHelper.registerKeyBinding(new KeyBinding("World", InputUtil.Type.KEYSYM, GLFW.GLFW_KEY_KP_8, "NoRender (press left ALT + Num)"));
         //keyBinding0 = KeyBindingHelper.registerKeyBinding(new KeyBinding("Crash", InputUtil.Type.KEYSYM, GLFW.GLFW_KEY_KP_0, "NoRender (press left ALT + Num)"));
 
         ClientTickEvents.END_CLIENT_TICK.register(client -> {
@@ -80,6 +83,10 @@ public class NoRender implements ModInitializer {
                     isEnabled8 = !isEnabled8;
                 }
 
+                /*while (keyBinding9.wasPressed()) {
+                    isEnabled9 = !isEnabled9;
+                }*/
+
                 /*while (keyBinding0.wasPressed()) {
                     throw new RuntimeException("BOOM!");
                 }*/
@@ -114,4 +121,10 @@ public class NoRender implements ModInitializer {
     public boolean isEnabled8() {
         return isEnabled8;
     }
+    /*public boolean isEnabled9() {
+        return isEnabled9;
+    }*/
+    /*public boolean isEnabled0() {
+        return isEnabled0;
+    }*/
 }

@@ -11,7 +11,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 public class MixinEntity {
     @Inject(method = "isGlowing", at = @At("HEAD"), cancellable=true)
     private void onIsGlowing(CallbackInfoReturnable<Boolean> info) {
-        if (NoRender.getInstance().isEnabled2()) {
+        if (NoRender.getInstance().isEnabled7()) {
             info.setReturnValue(false);
         }
     }
