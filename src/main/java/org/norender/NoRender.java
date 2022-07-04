@@ -36,14 +36,14 @@ public class NoRender implements ModInitializer {
         }
 
         keyBinding1 = KeyBindingHelper.registerKeyBinding(new KeyBinding("Scoreboard", InputUtil.Type.KEYSYM, GLFW.GLFW_KEY_KP_1, "NoRender (press left ALT + Num)"));
-        keyBinding2 = KeyBindingHelper.registerKeyBinding(new KeyBinding("Nametags + Glow", InputUtil.Type.KEYSYM, GLFW.GLFW_KEY_KP_2, "NoRender (press left ALT + Num)"));
+        keyBinding2 = KeyBindingHelper.registerKeyBinding(new KeyBinding("Nametags", InputUtil.Type.KEYSYM, GLFW.GLFW_KEY_KP_2, "NoRender (press left ALT + Num)"));
         keyBinding3 = KeyBindingHelper.registerKeyBinding(new KeyBinding("Crosshair", InputUtil.Type.KEYSYM, GLFW.GLFW_KEY_KP_3, "NoRender (press left ALT + Num)"));
         keyBinding4 = KeyBindingHelper.registerKeyBinding(new KeyBinding("HUD", InputUtil.Type.KEYSYM, GLFW.GLFW_KEY_KP_4, "NoRender (press left ALT + Num)"));
         keyBinding5 = KeyBindingHelper.registerKeyBinding(new KeyBinding("Chat", InputUtil.Type.KEYSYM, GLFW.GLFW_KEY_KP_5, "NoRender (press left ALT + Num)"));
         keyBinding6 = KeyBindingHelper.registerKeyBinding(new KeyBinding("Hand", InputUtil.Type.KEYSYM, GLFW.GLFW_KEY_KP_6, "NoRender (press left ALT + Num)"));
         keyBinding7 = KeyBindingHelper.registerKeyBinding(new KeyBinding("Misc", InputUtil.Type.KEYSYM, GLFW.GLFW_KEY_KP_7, "NoRender (press left ALT + Num)"));
         keyBinding8 = KeyBindingHelper.registerKeyBinding(new KeyBinding("Minimap", InputUtil.Type.KEYSYM, GLFW.GLFW_KEY_KP_8, "NoRender (press left ALT + Num)"));
-        keyBinding9 = KeyBindingHelper.registerKeyBinding(new KeyBinding("Particles", InputUtil.Type.KEYSYM, GLFW.GLFW_KEY_KP_8, "NoRender (press left ALT + Num)"));
+        keyBinding9 = KeyBindingHelper.registerKeyBinding(new KeyBinding("Particles", InputUtil.Type.KEYSYM, GLFW.GLFW_KEY_KP_9, "NoRender (press left ALT + Num)"));
 
         ClientTickEvents.END_CLIENT_TICK.register(client -> {
             if (InputUtil.isKeyPressed(MinecraftClient.getInstance().getWindow().getHandle(), GLFW.GLFW_KEY_LEFT_ALT)) {
