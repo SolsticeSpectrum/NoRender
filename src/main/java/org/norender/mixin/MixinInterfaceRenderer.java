@@ -11,7 +11,6 @@ import xaero.common.interfaces.render.InterfaceRenderer;
 
 @Mixin(InterfaceRenderer.class)
 public class MixinInterfaceRenderer {
-
     @Inject(method = "renderInterfaces", at = @At("HEAD"), cancellable = true, remap = false)
     public void onRenderInterfaces(XaeroMinimapSession minimapSession, MatrixStack matrixStack, float partial, CallbackInfo info) {
         if (NoRender.getInstance().isEnabled8()) {

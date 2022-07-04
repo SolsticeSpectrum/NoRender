@@ -5,7 +5,6 @@ import net.minecraft.client.gui.hud.InGameHud;
 import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.scoreboard.ScoreboardObjective;
 import net.minecraft.text.Text;
-import net.minecraft.text.TextContent;
 import org.norender.NoRender;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
@@ -14,7 +13,6 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 @Mixin(InGameHud.class)
 public class MixinInGameHud {
-
 	@Inject(method = "renderScoreboardSidebar", at = @At("HEAD"), cancellable = true)
 	public void onRenderScoreboardSidebar(MatrixStack matrices, ScoreboardObjective objective, CallbackInfo info) {
 		if (NoRender.getInstance().isEnabled1()) {

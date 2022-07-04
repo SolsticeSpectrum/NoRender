@@ -9,6 +9,7 @@
     "MixinEntityRenderer",
     "MixinGameRenderer",
     "MixinInGameHud",
+    "MixinParticleManager",
     "MixinWorldRenderer"
   ],
   "mixinPriority" : 899,
