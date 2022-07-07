@@ -71,19 +71,19 @@ public class MixinInGameHud {
 
 	@Inject(method = "setTitle", at = @At("HEAD"), cancellable = true)
 	public void onSetTitle(Text title, CallbackInfo info) {
-		MinecraftClient.getInstance().inGameHud.getChatHud().addMessage(Text.literal("Title: ").append(title));
+		//MinecraftClient.getInstance().inGameHud.getChatHud().addMessage(Text.literal("Title: ").append(title));
 		info.cancel();
 	}
 
 	@Inject(method = "setSubtitle", at = @At("HEAD"), cancellable = true)
 	public void onSetSubtitle(Text subtitle, CallbackInfo info) {
-		MinecraftClient.getInstance().inGameHud.getChatHud().addMessage(Text.literal("Subtitle: ").append(subtitle));
+		//MinecraftClient.getInstance().inGameHud.getChatHud().addMessage(Text.literal("Subtitle: ").append(subtitle));
 		info.cancel();
 	}
 
 	@Inject(method = "setOverlayMessage", at = @At("HEAD"), cancellable = true)
 	private void onSetOverlayMessage(Text message, boolean tinted, CallbackInfo info) {
-		MinecraftClient.getInstance().inGameHud.getChatHud().addMessage(Text.literal("Action bar: ").append(message));
+		//MinecraftClient.getInstance().inGameHud.getChatHud().addMessage(Text.literal("Action bar: ").append(message));
 		info.cancel();
 	}
 }
