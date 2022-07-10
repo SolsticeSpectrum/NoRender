@@ -9,6 +9,7 @@ import net.minecraft.client.util.InputUtil;
 import org.lwjgl.glfw.GLFW;
 
 public class NoRender implements ModInitializer {
+    private boolean isEnabled0;
     private boolean isEnabled1;
     private boolean isEnabled2;
     private boolean isEnabled3;
@@ -18,6 +19,7 @@ public class NoRender implements ModInitializer {
     private boolean isEnabled7;
     private boolean isEnabled8;
     private boolean isEnabled9;
+    private static KeyBinding keyBinding0;
     private static KeyBinding keyBinding1;
     private static KeyBinding keyBinding2;
     private static KeyBinding keyBinding3;
@@ -35,6 +37,7 @@ public class NoRender implements ModInitializer {
             INSTANCE = this;
         }
 
+        keyBinding0 = KeyBindingHelper.registerKeyBinding(new KeyBinding("Action bar", InputUtil.Type.KEYSYM, GLFW.GLFW_KEY_KP_0, "NoRender (press left ALT + Num)"));
         keyBinding1 = KeyBindingHelper.registerKeyBinding(new KeyBinding("Scoreboard", InputUtil.Type.KEYSYM, GLFW.GLFW_KEY_KP_1, "NoRender (press left ALT + Num)"));
         keyBinding2 = KeyBindingHelper.registerKeyBinding(new KeyBinding("Nametags", InputUtil.Type.KEYSYM, GLFW.GLFW_KEY_KP_2, "NoRender (press left ALT + Num)"));
         keyBinding3 = KeyBindingHelper.registerKeyBinding(new KeyBinding("Crosshair", InputUtil.Type.KEYSYM, GLFW.GLFW_KEY_KP_3, "NoRender (press left ALT + Num)"));
@@ -47,6 +50,10 @@ public class NoRender implements ModInitializer {
 
         ClientTickEvents.END_CLIENT_TICK.register(client -> {
             if (InputUtil.isKeyPressed(MinecraftClient.getInstance().getWindow().getHandle(), GLFW.GLFW_KEY_LEFT_ALT)) {
+
+                while (keyBinding0.wasPressed()) {
+                    isEnabled0 = !isEnabled0;
+                }
 
                 while (keyBinding1.wasPressed()) {
                     isEnabled1 = !isEnabled1;
@@ -89,6 +96,9 @@ public class NoRender implements ModInitializer {
 
     public static NoRender getInstance() {
         return INSTANCE;
+    }
+    public boolean isEnabled0() {
+        return isEnabled0;
     }
     public boolean isEnabled1() {
         return isEnabled1;
