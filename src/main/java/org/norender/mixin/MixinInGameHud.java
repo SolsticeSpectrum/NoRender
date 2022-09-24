@@ -73,29 +73,29 @@ public class MixinInGameHud {
 	public void onSetTitle(Text title, CallbackInfo info) {
 		if (NoRender.getInstance().isEnabled0()) {
 			info.cancel();
-		} else {
+		} /*else {
 			MinecraftClient.getInstance().inGameHud.getChatHud().addMessage(Text.literal("Title: ").append(title));
 			info.cancel();
-		}
+		}*/
 	}
 
 	@Inject(method = "setSubtitle", at = @At("HEAD"), cancellable = true)
 	public void onSetSubtitle(Text subtitle, CallbackInfo info) {
 		if (NoRender.getInstance().isEnabled0()) {
 			info.cancel();
-		} else {
+		} /*else {
 			MinecraftClient.getInstance().inGameHud.getChatHud().addMessage(Text.literal("Subtitle: ").append(subtitle));
 			info.cancel();
-		}
+		}*/
 	}
 
 	@Inject(method = "setOverlayMessage", at = @At("HEAD"), cancellable = true)
 	private void onSetOverlayMessage(Text message, boolean tinted, CallbackInfo info) {
 		if (NoRender.getInstance().isEnabled0()) {
 			info.cancel();
-		} else {
+		} /*else {
 			MinecraftClient.getInstance().inGameHud.getChatHud().addMessage(Text.literal("Action bar: ").append(message));
 			info.cancel();
-		}
+		}*/
 	}
 }
